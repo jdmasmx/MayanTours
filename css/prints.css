@@ -1,0 +1,89 @@
+/* PDF Section Print  */
+
+body {
+
+	font-family: Arial, Tahoma;
+}
+
+
+/* PDF Section Print  */
+
+#mainpdf {
+
+	width: 940px;
+	min-height: 200px;
+	margin: 0 auto 0 auto;
+}
+
+#headerpdf {
+	width: 940px;
+	float: left;
+}
+
+.col1 {
+	width: 270px;
+	min-width: 270px;
+	float: left;
+	
+}
+
+.col2 {
+	width: 400px;
+	float: left;
+	
+}
+
+.col3 {
+	width: 450px;
+	float: left;
+	
+}
+
+.col4 {
+	width: 750px;
+	float: left;
+}
+
+.col5 {
+	width: 150px;
+	float: left;
+	
+}
+
+.titulo {
+	color: #000;
+	font-size: 18px;
+	margin-top: 30px;
+	float: left;
+}
+
+.mardi {
+	color: #000;
+	font-size: 12px;
+	margin-top: 20px;
+	float: left;
+}
+
+#infopdf {
+	width: 940px;
+	margin-top: 20px;
+	float: left;
+}
+
+
+
+.datapdf {
+	font-weight: bold;
+	font-size: 14pt;
+
+}
+
+.textopdf {	
+	font-size: 12px;
+	text-align: justify;
+}
+
+.imgright {
+	float: left;
+
+}
