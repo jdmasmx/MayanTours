@@ -187,7 +187,7 @@
                 <a href="<?php echo base_url(); ?>index.php/form/edit/<?php echo $foo->id; ?>"><image src="<?php echo base_url(); ?>images/edit_a.png" title="Edit" alt="Edit"></a>
                 <a href="<?php echo base_url(); ?>index.php/form/views/<?php echo $foo->id; ?>"><image src="<?php echo base_url(); ?>images/view_a.png" title="View" alt="View"></a>
                 <a href="<?php echo base_url(); ?>index.php/form/pdf/<?php echo $foo->id; ?>" target="_blank"><image src="<?php echo base_url(); ?>images/pdf_a.png" title="Confirmation" alt="Confirmation"></a>
-                <!-- <a href= echo base_url(); ?>index.php/form/topdf/<?php echo $foo->id; ?>" target="_blank"><image src=" echo base_url(); ?>images/icn_categories.png" title="Voucher" alt="Voucher"></a> -->
+                <a href="<?php echo base_url(); ?>index.php/form/pdfd/<?php echo $foo->id; ?>" target="_blank"><image src=" <?php echo base_url(); ?>images/pdf_a.png" title="Voucher" alt="Voucher"></a> 
                 <!-- <input type="image" src=" echo base_url(); ?>images/icn_trash.png" title="Trash"> -->
               </td>
               <?php
