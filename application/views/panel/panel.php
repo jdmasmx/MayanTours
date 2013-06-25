@@ -114,8 +114,8 @@
     <span>Hour: 
       <select NAME="tourtime" SIZE=1  id="tourtime">
         <option value=""></option>
-  <option value="08:00am">8:00am</option>
-  <option value="09:00am">9:00am</option>
+  <option value="08:30am">8:30am</option>
+  <option value="10:30am">10:30am</option>
       </select></span>
       <br />
       <input type="submit" value="View" id="elguarda" class="enviar">
@@ -136,8 +136,8 @@
     <span>Hour: 
       <select NAME="tourtime" SIZE=1  id="tourtime">
         <option value=""></option>
-  <option value="08:00am">8:00am</option>
-  <option value="09:00am">9:00am</option>
+  <option value="08:30am">8:30am</option>
+  <option value="10:30am">10:30am</option>
       </select></span>
       <br />
       <input type="submit" value="View" id="elguarda" class="enviar">

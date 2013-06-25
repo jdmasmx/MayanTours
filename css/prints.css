@@ -22,6 +22,12 @@ body {
 	margin-bottom: 50px;
 }
 
+#headerpdfs {
+	width: 940px;
+	float: left;
+	margin-bottom: 10px;
+}
+
 .col1 {
 	width: 270px;
 	min-width: 270px;
