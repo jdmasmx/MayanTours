@@ -184,7 +184,7 @@
           <textarea cols="25" rows="10" id="commentsvisitor" name="commentsvisitor" ><?php echo $foo->commentsvisitor; ?></textarea>
           <br /><br />
           <input type="hidden" value="<?php echo $foo->id; ?>" id="elid" name="elid">
-          <input type="hidden" value="diego mas" id="reserverby" name="reserverby">
+          <input type="hidden" value="<?php echo $foo->reserverby; ?>" id="reserverby" name="reserverby">
           <input type="submit" value="Update" id="elguarda" class="enviar"> <a href="<?php echo base_url(); ?>" class="boton">Cancel</a>
           <?php }  echo form_close(); ?>
         </div>

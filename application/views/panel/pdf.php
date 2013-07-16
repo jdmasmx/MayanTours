@@ -11,7 +11,8 @@ foreach($query->result() as $foo){
   ?>
   <head>
     <meta charset="utf-8"/>
-    <title><?php echo $code[1].''.$code[2].'CMRR'.$foo->service;?> -  Reservation Confirmation Cozumel Mayan Tours</title>
+  
+    <title><?php echo $code[1].''.$code[2].'CMRR'.$foo->service;?> -  Reservation Confirmation CMT - <?php echo $foo->name.' '.$foo->lastname; ?></title>
 
     <link rel="stylesheet" href="<?php echo base_url(); ?>css/layout.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="<?php echo base_url(); ?>css/prints.css" type="text/css" media="print" />
@@ -45,141 +46,152 @@ foreach($query->result() as $foo){
       </div>
       <div class="col25">
         <span class="mardi"><strong> MARDI, LLC</strong> <br />
-        3923 West Willetta Street<br />
-        Phoenix, AZ    85009<br />
-        United States</span>
-      </div>
-    </div> <!-- Header -->
-    <div id="contenedor"> <!-- infopdf -->
+          3923 West Willetta Street<br />
+          Phoenix, AZ    85009<br />
+          United States</span>
+        </div>
+      </div> <!-- Header -->
+      <div id="contenedor"> <!-- infopdf -->
 
-      <div class="cuarenta">
-        <span class="datapdf">Name: </span>
+        <div class="cuarenta">
+          <span class="datapdf">Name: </span>
+        </div>
+        <div class="cuarenta">
+          <span class="colors"><?php echo $foo->name.' '.$foo->lastname; ?></span>
+        </div>
+        <br />
+        <div class="cuarenta">
+          <span class="datapdf">Country: </span>
+        </div>
+        <div class="cuarenta">
+          <span class="colors"><?php echo $foo->country; ?></span>
+        </div>
+        <br />
+        <div class="cuarenta">
+          <span class="datapdf">Hotel or Ship:</span>
+        </div>
+        <div class="cuarenta">
+          <span class="colors"><?php echo $foo->hotel_cruise; ?></span>
+        </div><br />
+        <div class="cuarenta">
+          <span class="datapdf">E-mail: </span>
+        </div>
+        <div class="cuarenta">
+          <span class="colors"><?php echo $foo->email; ?></span>
+        </div><br />
+
+        <div class="cuarenta">
+          <span class="datapdf">Reservation Code:</span>
+        </div>
+        <div class="cuarenta">
+          <span class="colors"><?php echo $code[1].''.$code[2].'CMRR'.$foo->service;?></span>
+        </div><br />
+        <div class="cuarenta">
+          <span class="datapdf">Reserved On: </span>
+        </div>
+        <div class="cuarenta">
+          <span class="colors"><?php echo $foo->date_reservation; ?></span>
+        </div><br />
+        <div class="cuarenta">
+          <span class="datapdf">Reserved By:</span>
+        </div>
+        <div class="cuarenta">
+          <span class="colors"><?php echo $foo->reserverby; ?></span>
+        </div><br />
+        <div class="cuarenta">
+          <span class="datapdf">Tour Date:</span>
+        </div>
+        <div class="cuarenta">
+          <span class="colors"><?php echo $foo->date_tour; ?></span>
+        </div><br />
+        <div class="cuarenta">
+          <span class="datapdf"> Time:</span>
+        </div>
+        <div class="cuarenta">
+          <span class="colors"> <?php echo $foo->tour_time; ?> </span>
+        </div>
+        <br />
+
+        <div class="cuarentas">
+          <span class="datapdf">Good for: </span>
+        </div>
+        <div class="cuarentas">
+          <span class="colors"> <?php echo $foo->passengers; ?> Passegers </span> 
+        </div><br />
+        <div class="cuarentas">
+          <span class="datapdf"> Tour Reserved: </span>
+        </div>
+        <div class="cuarentas">
+          <span class="colors"> Cozumel Mayan Route 'n' Roots </span>
+        </div><br />
+        <div class="cuarentas">
+          <span class="datapdf"> Reservation Paid in USD: </span>
+        </div>
+        <div class="cuarentas">
+         <span class="colors"> $ <?php echo $foo->paid; ?> </span> 
+       </div>
+       <br />
+       <div class="cuarenta">
+        <span class="datapdf"> My Donation to the Cozumel Red Cross: </span>
       </div>
       <div class="cuarenta">
-        <span class="colors"><?php echo $foo->name.' '.$foo->lastname; ?></span>
+        <span class="colors"> $<?php echo $foo->donation; ?> </span>
       </div>
+    </div> <!-- infopdf-->
+
+    <div id="infopdf"> <!-- infopdf -->
+      <div class="aja">
+        <span class="datapdf">Special comments:</span> <br /><br />
+      </div>
+      <div class="ajas">
+        <span class="colorsC"> <?php echo $foo->commentsadmin; ?></span>
+      </div>
+
+
       <br />
-      <div class="cuarenta">
-        <span class="datapdf">Country: </span>
-      </div>
-      <div class="cuarenta">
-        <span class="colors"><?php echo $foo->country; ?></span>
-      </div>
-      <br />
-      <div class="cuarenta">
-        <span class="datapdf">Hotel or Ship:</span>
-      </div>
-      <div class="cuarenta">
-        <span class="colors"><?php echo $foo->hotel_cruise; ?></span>
-      </div><br />
-      <div class="cuarenta">
-        <span class="datapdf">E-mail: </span>
-      </div>
-      <div class="cuarenta">
-        <span class="colors"><?php echo $foo->email; ?></span>
-      </div><br />
+      
 
-      <div class="cuarenta">
-        <span class="datapdf">Reservation Code:</span>
-      </div>
-      <div class="cuarenta">
-        <span class="colors"><?php echo $code[1].''.$code[2].'CMRR'.$foo->service;?></span>
-      </div><br />
-      <div class="cuarenta">
-        <span class="datapdf">Reserved On: </span>
-      </div>
-      <div class="cuarenta">
-        <span class="colors"><?php echo $foo->date_reservation; ?></span>
-      </div><br />
-      <div class="cuarenta">
-        <span class="datapdf">Reserved By:</span>
-      </div>
-      <div class="cuarenta">
-        <span class="colors"><?php echo $foo->reserverby; ?></span>
-      </div><br />
-      <div class="cuarenta">
-        <span class="datapdf">Tour Date:</span>
-      </div>
-      <div class="cuarenta">
-        <span class="colors"><?php echo $foo->date_tour; ?></span>
-      </div><br />
-      <div class="cuarenta">
-        <span class="datapdf"> Time:</span>
-      </div>
-      <div class="cuarenta">
-        <span class="colors"> <?php echo $foo->tour_time; ?> </span>
-      </div>
-      <br />
+      
+      <br style="clear: left;" />
+      <p class="textopdf">
 
-      <div class="cuarentas">
-        <span class="datapdf">Good for: </span>
+        <strong>Cancellations Terms and Conditions</strong>
+        <br /><br />
+        Cancellations received 7 days prior to your tour allow you to change the date and/or nature of the tour, or to receive a 100% 
+        refund. Cancellations within 72 hours (3 days) provide the option to change the date and/or nature of the tour, or receive a 50% 
+        refund. <strong>NO cancellations honored 72 hours prior to a tour</strong> excluding unforeseeable circumstances, such as acts of nature.
+        <br /><br />
+        When a reservation is made for a group and one or more member must cancel, the same terms and conditions for cancellations 
+        apply as stated above. Due to the change of number on your group, although any forthcoming refund cannot be applied to a 
+        balance owed, it will promptly be remitted by MARDI, LLC and balances adjusted. Again, <strong>NO cancellations honored 72 hours prior </strong> to a tour.
+        <br /><br />
+        <strong>For Cruise Passengers Only: </strong> 100% refund if your ship fails to dock.
+        <br /><br />
+        <strong>MARDI, LLC and its representatives </strong>are solely intermediaries of parks, restaurants, entertainment, and transportation companies. 
+        <strong>MARDI, LLC and its representatives</strong> are not responsible for any losses, injuries, delays, time changes, damages, items purchased or 
+        any other circumstances that may occur before, during, or after tours and/or activities
+      </p>
+
+    </div> <!-- infopdf-->
+    <div id="bottoms"> <!-- infopdf -->
+      <div class="col4">
+        <p class="textopdfb"><strong>The balance due of your reserved tour and all issues related will be managed and attended at Cozumel by: <img src="<?php echo base_url(); ?>images/logonuevo.png" width="130"></strong></p>
       </div>
-      <div class="cuarentas">
-        <span class="colors"> <?php echo $foo->passengers; ?> Passegers </span> 
-      </div><br />
-      <div class="cuarentas">
-        <span class="datapdf"> Tour Reserved: </span>
+      <div class="col5">
+
       </div>
-      <div class="cuarentas">
-        <span class="colors"> Cozumel Mayan Route 'n Roots </span>
-      </div><br />
-      <div class="cuarentas">
-        <span class="datapdf"> Reservation Paid in USD: </span>
+    </div> <!-- infopdf-->
+    <div id="bottoms"> <!-- infopdf -->
+      <div class="col4">
+        <p class="textopdfb"><strong>Help save our planet! Don’t print this document just keep a copy for informational purposes with your e-mail <img src="<?php echo base_url(); ?>images/flor.png" width="50"></strong></p>
       </div>
-      <div class="cuarentas">
-       <span class="colors"> $ <?php echo $foo->paid; ?> </span> 
-     </div>
-     <br />
-     <div class="cuarenta">
-      <span class="datapdf"> My Donation to the Cozumel Red Cross: </span>
-    </div>
-    <div class="cuarenta">
-      <span class="colors"> $<?php echo $foo->donation; ?> </span>
-    </div>
-  </div> <!-- infopdf-->
+      <div class="col5">
 
-<div class="espacio"></div>
-  <div id="infopdf"> <!-- infopdf -->
-    <span class="datapdf">Special comments:</span> <br /><br />
-    <p class="textopdf">
+      </div>
+    </div> <!-- infopdf-->
+  </div> <!-- main PDF-->
 
-      <strong>Cancellations Terms and Conditions</strong>
-      <br /><br />
-      Cancellations received 7 days prior to your tour allow you to change the date and/or nature of the tour, or to receive a 100% 
-      refund. Cancellations within 72 hours (3 days) provide the option to change the date and/or nature of the tour, or receive a 50% 
-      refund. <strong>NO cancellations honored 72 hours prior to a tour</strong> excluding unforeseeable circumstances, such as acts of nature.
-      <br /><br />
-      When a reservation is made for a group and one or more member must cancel, the same terms and conditions for cancellations 
-      apply as stated above. Due to the change of number on your group, although any forthcoming refund cannot be applied to a 
-      balance owed, it will promptly be remitted by MARDI, LLC and balances adjusted. Again, <strong>NO cancellations honored 72 hours prior </strong> to a tour.
-      <br /><br />
-      <strong>For Cruise Passengers Only: </strong> 100% refund if your ship fails to dock.
-      <br /><br />
-      <strong>MARDI, LLC and its representatives </strong>are solely intermediaries of parks, restaurants, entertainment, and transportation companies. 
-      <strong>MARDI, LLC and its representatives</strong> are not responsible for any losses, injuries, delays, time changes, damages, items purchased or 
-      any other circumstances that may occur before, during, or after tours and/or activities
-    </p>
-
-  </div> <!-- infopdf-->
-  <div id="bottoms"> <!-- infopdf -->
-    <div class="col4">
-      <p class="textopdfb"><strong>The balance due of your reserved tour and all issues related will be managed and attended at Cozumel by: <img src="<?php echo base_url(); ?>images/logos.png" width="130"></strong></p>
-    </div>
-    <div class="col5">
-
-    </div>
-  </div> <!-- infopdf-->
-  <div id="bottoms"> <!-- infopdf -->
-    <div class="col4">
-      <p class="textopdfb"><strong>Help save our planet! Don’t print this document just keep a copy for informational purposes with your e-mail <img src="<?php echo base_url(); ?>images/flor.png" width="50"></strong></p>
-    </div>
-    <div class="col5">
-
-    </div>
-  </div> <!-- infopdf-->
-</div> <!-- main PDF-->
-
-<?php
+  <?php
 }
 ?>
 

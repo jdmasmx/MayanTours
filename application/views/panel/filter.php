@@ -114,8 +114,8 @@
     <span>Hour: 
       <select NAME="tourtime" SIZE=1  id="tourtime">
         <option value=""></option>
-  <option value="08:30am">8:30am</option>
-  <option value="10:30am">10:30am</option>
+  <option value="08:30am">8:30AM</option>
+  <option value="10:30am">10:30AM</option>
       </select></span>
       <br />
       <input type="submit" value="View" id="elguarda" class="enviar">
@@ -136,8 +136,8 @@
     <span>Hour: 
       <select NAME="tourtime" SIZE=1  id="tourtime">
         <option value=""></option>
-  <option value="08:30am">8:30am</option>
-  <option value="10:30am">10:30am</option>
+  <option value="08:30AM">8:30AM</option>
+  <option value="10:30AM">10:30AM</option>
       </select></span>
       <br />
       <input type="submit" value="View" id="elguarda" class="enviar">
@@ -184,7 +184,7 @@
 
               ?>
               <td>
-                <a href="<?php echo base_url(); ?>index.php/form/edit/<?php echo $foo->id; ?>"><image src="<?php echo base_url(); ?>images/edit_a.png" title="Edit" alt="Edit"></a>
+                <a href="<?php echo base_url(); ?>index.php/form/edit/<?php echo $foo->id; ?>" target="_blank"><image src="<?php echo base_url(); ?>images/edit_a.png" title="Edit" alt="Edit"></a>
                 <a href="<?php echo base_url(); ?>index.php/form/views/<?php echo $foo->id; ?>"><image src="<?php echo base_url(); ?>images/view_a.png" title="View" alt="View"></a>
                 <a href="<?php echo base_url(); ?>index.php/form/pdf/<?php echo $foo->id; ?>" target="_blank"><image src="<?php echo base_url(); ?>images/pdf_a.png" title="Confirmation" alt="Confirmation"></a>
                 <a href="<?php echo base_url(); ?>index.php/form/pdfd/<?php echo $foo->id; ?>" target="_blank"><image src=" <?php echo base_url(); ?>images/pdf_a.png" title="Voucher" alt="Voucher"></a> 

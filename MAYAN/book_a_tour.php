@@ -78,7 +78,7 @@
 <script>
 jQuery(document).ready(function($) {
   $("#date_in, #date_out, #filter_date_in, #filter_date_out").datepicker({
-   dateFormat: 'MM dd, yy',
+   dateFormat: 'yy-mm-d',
    minDate: 0,
    showOtherMonths: true
  });
@@ -107,10 +107,10 @@ ga('send', 'pageview');
 
 </script>
 
-<link href="css/global.css" rel="stylesheet" type="text/css" /> 
-  <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
-  <script type="text/javascript" src="js/jquery.placeholder.min.js"></script>
-  <script type="text/javascript" src="js/contact.js"></script>
+<!-- <link href="css/global.css" rel="stylesheet" type="text/css" />  -->
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+<script type="text/javascript" src="js/jquery.placeholder.min.js"></script>
+<script type="text/javascript" src="js/contact.js"></script>
 
 </head>
 <body>  
@@ -220,47 +220,36 @@ ga('send', 'pageview');
 
       <div>
         <!-- <form action="#" method="get" class="form_white"> -->
-        <form id="contact" name="contact" method="POST" action="process.php">
+        
+      </div>
+    </div>
 
-          <div style="padding-bottom:15px !important;">
-            <!--<label class="label_title">Firs Name:</label>-->
-            <!-- <input style="width:90% !important" type="text" name="firstname" placeholder="First Name" value="" class="inputField"> -->
-           <input style="width:90% !important" type="text" id="firstName" name="firstName" placeholder="First Name" class="required" />
-          </div>
-          
-          <div style="padding-bottom:15px !important;">
-           <input style="width:90% !important" type="text" name="lastname" placeholder="Last Name" value="" class="inputField">
-         </div>
-         
-         <div style="padding-bottom:15px !important;">
-           <input style="width:90% !important" type="text" name="email" placeholder="Email" value="" class="inputField">
-         </div>
-         
-         <div style="padding-bottom:15px !important;">
-           <input style="width:90% !important" type="text" name="hotel_cruise" placeholder="Phone Number with Area Code (Optional)" value="" class="inputField">
-         </div>
-         
-         <div style="padding-bottom:15px !important;">
-           <input style="width:90% !important" type="text" name="hotel_cruise" placeholder="Hotel or Cruise Ship" value="" class="inputField">
-         </div>
-         
-         <div style="padding-bottom:15px !important;">
-           <input style="width:90% !important" type="text" name="hotel_cruise" placeholder="Room Number (If you have it)" value="" class="inputField">
-         </div>
-         
-         <!--  ----------------------------------------------------------------------------------  -->
-         
-         <div style="padding-bottom:15px !important;">
-           <label class="label_title">Date Tour</label>
-           <input type="text" name="filter_date_in" class="inputField inputDate" value="choose date" onFocus="if (this.value == 'choose date') {this.value = '';}" onBlur="if (this.value == '') {this.value = 'choose date';}" id="filter_date_in">
-           <!--<span class="input_icon"></span>-->
-         </div>
-         
-         
-         <!--  ----------------------------------------------------------------------------------  -->
-         
-         
-         <div class=" rowSelect" style="z-index:1000; padding-bottom:15px !important;">
+    <div id="container">
+      <form id="contact" name="contact" method="POST" action="process.php">
+
+        <!-- <input type="text" id="firstName" name="firstName" placeholder="First Name" class="required" /> -->
+        <div style="padding-bottom:15px !important;">
+          <!--<label class="label_title">Firs Name:</label>-->
+          <!-- <input style="width:90% !important" type="text" name="firstname" placeholder="First Name" value="" class="inputField"> -->
+          <input style="width:70% !important" type="text" id="firstName" name="firstName" placeholder="First Name" class="required" />
+        </div>
+        <div style="padding-bottom:15px !important;">
+          <input style="width:70% !important" type="text" id="lastName" name="lastName" placeholder="Last Name" class="required" />
+        </div>
+        <div style="padding-bottom:15px !important;">
+          <input style="width:70% !important" type="text" id="email" name="email" placeholder="Email" class="required email" />
+        </div>
+        <div style="padding-bottom:15px !important;">
+          <input style="width:70% !important" type="text" id="phones" name="phones" placeholder="Phone Number with Area Code (Optional)" class="required">
+        </div>
+        <div style="padding-bottom:15px !important;">
+          <input style="width:70% !important" type="text" id="hotel_cruise" name="hotel_cruise" placeholder="Hotel or Cruise Ship" value="" class="inputField">
+        </div>
+        <div style="padding-bottom:15px !important;">
+          <label class="label_title">Date Tour</label>
+          <input type="text" name="filter_date_in" id="filter_date_in" class="inputField inputDate"  >
+        </div>
+        <div class=" rowSelect" style="z-index:1000; padding-bottom:15px !important;">
           <label class="label_title">Country</label>
           <select class="select_styled" name="country" id="country">
             <option value="">Select Country</option> 
@@ -505,22 +494,19 @@ ga('send', 'pageview');
             <option value="Yemen">Yemen</option> 
             <option value="Zambia">Zambia</option> 
             <option value="Zimbabwe">Zimbabwe</option>
-          </select>	                        
+          </select>                         
         </div> 
-        
-        
         <div class="rowSelect" style="z-index:100; padding-bottom:15px !important;">
           <label class="label_title">Tour Time</label>
           <select class="select_styled" name="tourtime" id="tourtime">
-            <option value="8:30 AM">8:30 AM</option>
-            <option value="10:30 PM">10:30 PM</option>
-          </select>	                        
+            <option value="08:30AM">8:30AM</option>
+            <option value="10:30AM">10:30AM</option>
+          </select>                         
         </div> 
-        
         <div class="rowSelect" style="z-index:20; padding-bottom:15px !important;">
           <label class="label_title">Passengers</label>
           <select class="select_styled" name="passengers" id="passengers">
-            <option value="">- please select -</option>
+            <option value=""></option>
             <option>1</option>
             <option>2</option>
             <option>3</option>
@@ -536,65 +522,60 @@ ga('send', 'pageview');
             <option>13</option>
             <option>14</option>
             <option>15</option>
-          </select>	                        
+          </select>                         
         </div> 
-        
-        
         <div style="padding-bottom:15px !important;">
-          <textarea cols="30" rows="10" name="message" placeholder="Anything else we should know?" class="textarea textarea_middle required"></textarea>
+          <textarea id="message" name="message" cols="40" rows="5" placeholder="Message" class="required" minlength="10" ></textarea>
         </div>
-        
-        
+        <div style="padding-bottom:15px !important;">
+          <input style="width:30% !important" id="num1" name="num1" readonly="readonly" class="sum" value="<?php echo rand(1,4) ?>" /> + 
+          <input style="width:30% !important" id="num2" name="num2" readonly="readonly" class="sum" value="<?php echo rand(5,9) ?>" /> =
+          <input type="text" name="captcha" id="captcha" class="captcha" maxlength="2" />
+        </div>
         <div class="input_styled checklist" style="padding-bottom:15px !important;">
-         <input type="checkbox" name="filter_hotel_3" id="filter_hotel_3" value="3" checked>
-         <label for="filter_hotel_3">I agree to the terms and conditions</label>
-       </div>	
-       
-       <div style="padding-bottom:15px !important;">
-         <!--<a href="#" class="enlarge" data-rel="prettyPhoto">View Terms and Conditions</a>-->
-         <ul class="gallery clearfix">
-          <a href="images/terms_conditions.jpg" rel="prettyPhoto">
-            View Terms and Conditions
-          </a>
-        </ul>
-      </div>
-      
-      <script type="text/javascript" charset="utf-8">
-      $(document).ready(function(){
-        $("area[rel^='prettyPhoto']").prettyPhoto();
-        
-        $(".gallery:first a[rel^='prettyPhoto']").prettyPhoto({animation_speed:'normal',theme:'light_square',slideshow:3000, autoplay_slideshow: true});
-        $(".gallery:gt(0) a[rel^='prettyPhoto']").prettyPhoto({animation_speed:'fast',slideshow:10000, hideflash: true});
-        
-        $("#custom_content a[rel^='prettyPhoto']:first").prettyPhoto({
-         custom_markup: '<div id="map_canvas" style="width:260px; height:265px"></div>',
-         changepicturecallback: function(){ initialize(); }
-       });
-        
-        $("#custom_content a[rel^='prettyPhoto']:last").prettyPhoto({
-         custom_markup: '<div id="bsap_1259344" class="bsarocks bsap_d49a0984d0f377271ccbf01a33f2b6d6"></div><div id="bsap_1237859" class="bsarocks bsap_d49a0984d0f377271ccbf01a33f2b6d6" style="height:260px"></div><div id="bsap_1251710" class="bsarocks bsap_d49a0984d0f377271ccbf01a33f2b6d6"></div>',
-         changepicturecallback: function(){ _bsap.exec(); }
-       });
-      });
-</script>            
+          <input type="checkbox" name="filter_hotel_3" id="filter_hotel_3" value="3" checked>
+          <label for="filter_hotel_3">I agree to the terms and conditions</label>
+        </div>  
 
+        <div style="padding-bottom:15px !important;">
+          <!--<a href="#" class="enlarge" data-rel="prettyPhoto">View Terms and Conditions</a>-->
+          <ul class="gallery clearfix">
+            <a href="images/terms_conditions.jpg" rel="prettyPhoto">
+              View Terms and Conditions
+            </a>
+          </ul>
+        </div>
+
+        <script type="text/javascript" charset="utf-8">
+        $(document).ready(function(){
+          $("area[rel^='prettyPhoto']").prettyPhoto();
+
+          $(".gallery:first a[rel^='prettyPhoto']").prettyPhoto({animation_speed:'normal',theme:'light_square',slideshow:3000, autoplay_slideshow: true});
+          $(".gallery:gt(0) a[rel^='prettyPhoto']").prettyPhoto({animation_speed:'fast',slideshow:10000, hideflash: true});
+
+          $("#custom_content a[rel^='prettyPhoto']:first").prettyPhoto({
+            custom_markup: '<div id="map_canvas" style="width:260px; height:265px"></div>',
+            changepicturecallback: function(){ initialize(); }
+          });
+
+          $("#custom_content a[rel^='prettyPhoto']:last").prettyPhoto({
+            custom_markup: '<div id="bsap_1259344" class="bsarocks bsap_d49a0984d0f377271ccbf01a33f2b6d6"></div><div id="bsap_1237859" class="bsarocks bsap_d49a0984d0f377271ccbf01a33f2b6d6" style="height:260px"></div><div id="bsap_1251710" class="bsarocks bsap_d49a0984d0f377271ccbf01a33f2b6d6"></div>',
+            changepicturecallback: function(){ _bsap.exec(); }
+          });
+        });
+</script>   
+<!--   <span id="spambot">(Are you human, or spambot?)</span> -->
+
+<!-- <input id="submit" name="submit" type="submit" value="Send It" /> -->
 <div class=" rowSubmit">
- <!--  <input type="submit" value="SEND RESERVATION REQUEST" class="btn-submit"> -->
- <input id="num1" name="num1" readonly="readonly" class="sum" value="<?php echo rand(1,4) ?>" /> + 
- <input id="num2" name="num2" readonly="readonly" class="sum" value="<?php echo rand(5,9) ?>" /> =
- <input type="text" name="captcha" id="captcha" class="captcha" maxlength="2" />
- <span id="spambot">(Are you human, or spambot?)</span>
-<input type="submit" value="SEND RESERVATION REQUEST" class="btn-submit"> 
- <!-- <input id="submit" name="submit" type="submit" value="Send It" /> -->
+  <input id="submit" name="submit" type="submit" value="SEND RESERVATION REQUEST" class="btn-submit">
+</div>
+
 
 </form>
 
 <div id="response"></div>
-<div id="loading"><img src="images/preloader.png" /></div>
-</div>
-
-</form>
-</div>
+<!-- <div id="loading"><img src="images/preloader.png" /></div> -->
 </div>
 
 
@@ -617,7 +598,7 @@ ga('send', 'pageview');
    </div>
  </div>
  <!--/ likebox -->
- 
+
  <!-- go to gallery -->
  <div class="widget-container newsletterBox">
   <div class="inner"> <a href="photo_gallery.html"><img name="gallery" src="images/photogallery.png" width="254" height="144" alt=""></a>
@@ -631,7 +612,7 @@ ga('send', 'pageview');
    <img src="images/paypal.png" width="226" height="110"></div>
  </div>
  <!--/ paypal -->
- 
+
 </div>
 <!--/ sidebar -->
 

@@ -31,14 +31,6 @@ $('input[placeholder], textarea[placeholder]').placeholder();
 					captcha: {
 						required: true,
 						captcha: true
-					},
-					filter_date_in : {
-						required: true
-						
-					},
-					passengers : {
-						required: true
-						
 					}
                 },
                 messages: {
@@ -77,25 +69,15 @@ function ajaxSubmit() {
 	$('#submit').attr('disabled', 'disabled');
 	var firstName = $('#firstName').val();
 	var lastName = $('#lastName').val();
-	var phones = $('#phones').val();
 	var email = $('#email').val();
 	var message = $('#message').val();
-	var hotel_cruise = $('#hotel_cruise').val();
-	var filter_date_in = $('#filter_date_in').val();
-	var country = $('#country').val();
-	var tourtime = $('#tourtime').val();
-	var passengers = $('#passengers').val();
-	
-
-	 
 	/*alert( "Form's about to be submitted! \n" 
 		+ firstName + "\n" 
 		+ lastName + "\n" 
 		+ email + "\n" 
 		+ message + "\n" );*/
-
 	
-	var data = 'firstName=' +firstName+ '&lastName=' +lastName+ '&email=' +email+ '&message=' +message+ '&phones=' +phones+ '&hotel_cruise=' +hotel_cruise+ '&filter_date_in=' +filter_date_in+ '&country=' +country+ '&tourtime=' +tourtime+ '&passengers=' +passengers;
+	var data = 'firstName=' +firstName+ '&lastName=' +lastName+ '&email=' +email+ '&message=' +message;
 		
 	$.ajax({
 		url: 'process.php',
@@ -106,7 +88,7 @@ function ajaxSubmit() {
 		success: function(response) {
 			if( response.error != 'true' ) {
 				$('#loading, #contact, .message').fadeOut('slow');
-				$('#response').html('<h3>Your reservation has been sent and will be confirmed within 24 hours. Once availability be confirmed, a PayPal link will be sent to you with your confirmation.</h3>').fadeIn('slow');
+				$('#response').html('<h3>Request Reservation Sent!</h3>').fadeIn('slow');
             }
 			else {
 					$('#loading').fadeOut('slow');

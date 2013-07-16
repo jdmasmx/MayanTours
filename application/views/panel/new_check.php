@@ -81,8 +81,8 @@ if ($left <= 0) {
   <span>Tour Time: </span><br />
   <select NAME="tourtime" SIZE=1  id="tourtime">
     <option value=""></option>
-    <option value="08:30am">8:30am</option>
-    <option value="10:30am">10:30am</option>
+    <option value="08:30AM">8:30AM</option>
+    <option value="10:30AM">10:30AM</option>
   </select>
   <br /><br />
   <span>Meeting Time: </span><br />

@@ -9,6 +9,7 @@ body {
 /* PDF Section Print  */
 
 
+
 #mainpdf {
 
 	width: 940px;
@@ -139,6 +140,22 @@ body {
 	float: left;
 }
 
+
+.colorsC {
+	font-weight: bold;
+	font-size: 10pt;
+	color: blue;
+	float: left;
+}
+
+.colorsR {
+	font-weight: bold;
+	font-size: 14pt;
+	color: blue;
+	float: left;
+	background-color: yellow;
+}
+
 .textopdfb {	
 	font-size: 16px;
 	text-align: justify;
@@ -202,6 +219,29 @@ font-weight: bold;
 
 }
 
+.cuarentaR {
+	width: 50%;
+	float: right;
+	margin-bottom: 2px;
+
+
+}
+
+.aja {
+	width: 200px;
+	float: left;
+	text-align: left;
+
+}
+
+.ajas {
+	word-wrap: break-word; 
+   max-width:730px; 
+   width: 730px;
+   float: left;
+
+}
+
 .sesenta {
 	width: 50%;
 	float: left;
@@ -235,4 +275,12 @@ font-weight: bold;
 	width: 450px;
 	float: left;
 	text-align: right;
+}
+
+
+.informacion {
+	float: left;
+	margin-top: -23px;
+	width: 100%;
+
 }
