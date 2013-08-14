@@ -31,6 +31,19 @@ foreach($query->result() as $foo){
   <script type="text/javascript" src="<?php echo base_url(); ?>js/jquery.validate.js"></script>
   <script type="text/javascript" src="<?php echo base_url(); ?>js/jquery.validate-rules.js"></script>
   <script type="text/javascript" src="<?php echo base_url(); ?>js/jquery.equalHeight.js"></script>
+  <style type="text/css">
+
+@media print {
+.colorsR {
+  font-weight: bold;
+  font-size: 14pt;
+  color: blue;
+  float: left;
+  background-color: yellow !important;
+}
+}
+
+  </style>
   
 </head>
 
@@ -240,23 +253,53 @@ foreach($query->result() as $foo){
 </div>
 
 
-<br />
+
 
 
 
 <br style="clear: left;" />
-
-
-<span class="datapdf">Tour Includes:</span> <br />
-<p class="textopdf">
- <br /><br /> 
-</p>
-<span class="datapdf">Tour Does Not Include: </span>
-<p class="textopdf">
- <br /><br /> 
-</p>
 <br />
-<hr /
+
+<!-- <span class="datapdf">Tour Includes:</span> <br />
+<p class="textopdf">
+ <br /><br /> 
+</p> -->
+<div class="aja">
+ <span class="datapdf">Tour Includes:</span> <br />
+</div>
+<div class="ajas">
+  <span class="colorsC"> 
+
+    * English-speaking guides at the three locations<br />
+    * Full transportation for the whole route<br />
+    * Cooler with purified ice and bottled water<br />
+    * Mexican Lunch<br />
+    * Sightseeing tour of the island<br />
+    * Beautiful map of the island
+
+
+  </span>
+</div>
+<br style="clear: left;" />
+<br />
+<div class="aja">
+ <span class="datapdf">Tour Does Not Include:</span> <br />
+</div>
+<div class="ajas">
+  <span class="colorsC"> 
+
+    * Gratuity optional<br />
+    * Souvenirs<br />
+    * Drinks while away from the vehicle<br />
+  </span>
+</div>
+<!-- <span class="datapdf">Tour Does Not Include: </span>
+<p class="textopdf">
+ <br /><br /> 
+</p>
+<br /> -->
+<hr />
+<br style="clear: left;" />
 <p class="textopdf">
   <strong>For further assistance, contact us from 8 am to 5 pm (Central time)</strong>
   USA & CAN call toll free at <strong>1(855)552-6986 / 1(855)55-COZUMEL</strong>
