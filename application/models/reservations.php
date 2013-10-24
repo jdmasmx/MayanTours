@@ -174,12 +174,13 @@ class Reservations extends CI_Model {
 
 	function view_reservations_dates() {	
 
-		$datetour = $this->input->post('datetour');
+		$datetour = $this->input->post('datetours');
 		$datetourd = $this->input->post('datetourd');
 		$tourtime = $this->input->post('tourtime');
 		$this->db->where('date_tour BETWEEN "'. date('Y-m-d', strtotime($datetour)). '" and "'. date('Y-m-d', strtotime($datetourd)).'"');
 		$this->db->where('tour_time', $tourtime);
-		$this->db->where('estatus', 'Confirmed');
+		//$this->db->where('estatus', 'Confirmed');
+		$this->db->where('estatus != ', 'Cancel');
 		$this->db->distinct();
 		$this->db->select('date_tour');
 		$this->db->select('tour_time');

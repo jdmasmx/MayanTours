@@ -142,6 +142,9 @@ class Form extends CI_Controller {
 
 	public function view_reservations_dates()
 	{
+
+
+
 		$this->load -> library( 'form_validation' );
 		$this->form_validation->set_rules( 'datetour', 'datetour', 'required' );
 		$this->form_validation->set_rules( 'tourtime', 'tourtime', 'required' );

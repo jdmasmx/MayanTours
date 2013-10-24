@@ -158,6 +158,7 @@
                 <th>Date</th> 
                 <th>Hour</th> 
                 <th># Confirmed Passengers</th>
+                <th>Status</th>
               </tr> 
             </thead> 
             <tbody> 
@@ -173,7 +174,7 @@
                   $d = $foo->date_tour;
                   $t = $foo->tour_time;
 
-                  $consultad = "SELECT date_tour, tour_time, SUM(passengers) FROM reservations where date_tour = '$d' AND tour_time = '$t';";
+                  $consultad = "SELECT date_tour, tour_time, SUM(passengers), estatus FROM reservations where date_tour = '$d' AND tour_time = '$t';";
                   $respuestad = mysql_query($consultad);
                   while($row = mysql_fetch_array($respuestad))
                   {
@@ -181,6 +182,7 @@
                     echo  "<td>".$row['date_tour']."</td>";
                     echo "<td>".$row['tour_time']. "</td>";
                     echo "<td>".$row['SUM(passengers)']. "</td>";
+                    echo "<td>".$row['estatus']. "</td>";
                     echo "</tr>";
 
                   }
