@@ -1,61 +1,45 @@
-<?php
+<!-- 
+ 	Project: Simple Math Captcha	
+	Author: Laith Sinawi
+	Author website: Website: http://www.SinawiWebDesign.com
+	Purpose: HTML form for Simple Match Captcha
+-->
 
-
-class enviamos
-{
-
-function sendEmail() {
-        global $return;
-        $body = "";
-        $body .= "From: ".$_POST['email']."\nSubject: Reservation Cozumel Mayan Route and Roots";
-        $body .= "\nFirst Name: ".$_POST['firstName'];
-        $body .= "\nLast Name: " .$_POST['lastName'];
-        $body .= "\nPhone: " .$_POST['phones'];
-        $body .= "\nHotel / Cruise " .$_POST['hotel_cruise'];
-        $body .= "\nDate Tour: " .$_POST['filter_date_in'];
-        $body .= "\nCountry: " .$_POST['country'];
-        $body .= "\nTour Time: " .$_POST['tourtime'];
-        $body .= "\nPassengers: " .$_POST['passengers'];
-        $body .= "\nMessage: " .$_POST['message'];
-
-        $name = $_POST['firstName'];
-        $lastname = $_POST['lastName'];
-        $email = $_POST['email'];
-        $telefono = $_POST['phones'];
-        $hotel = $_POST['hotel_cruise'];
-        $fecha = $_POST['filter_date_in'];
-        $country = $_POST['country'];
-        $time = $_POST['tourtime'];
-        $passengers = $_POST['passengers'];
-        $msg = $_POST['message'];
-        $dater = date("Y-m-d"); 
-        
-        $status = "Reserved";
-        $por = "Cozumel Mayan Tours";
-
-
-        $link=mysql_connect("db473804472.db.1and1.com","dbo473804472","50p0r731and1");
-        mysql_select_db("db473804472",$link);
-        $sql="insert into reservations (name, lastname, email, hotel_cruise, phone, date_tour, date_reservation, country, tour_time, passengers, commentsvisitor, reserverby, estatus) values ('$name', '$lastname', '$email', '$hotel','$telefono', '$fecha', '$dater', '$country', '$time', '$passengers', '$msg', '$por', '$status')";
-        $resultado=mysql_query($sql);
-        mysql_close($link);
-
-        //$sDe =  "reservations@cozumelmayantours.com";
-        $sDe =  $_POST['email'];
-        //$sCC = "dmas@consultoresemkt.com";
-        $sCabeceras = "From:".$sDe."\n"; 
-        //$sCabeceras .= "Cc:  :".$sCC."\n"; 
-
-       
-        if ( @mail(TO, SUBJECT, $body, $sCabeceras) ) {
-        //**if(true) {
-            $return['error'] = 'false';
-        }
-        else {
-            $return['error'] = 'true';
-        }
-        return $return;
-    }
-
-}
-    ?>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Laith Sinawi Simple Captcha Demo</title>
+<link href="css/global.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+<script type="text/javascript" src="js/jquery.placeholder.min.js"></script>
+<script type="text/javascript" src="js/contact.js"></script>
+</head>
+<body>
+	
+	<div id="container">
+	<form id="contact" name="contact" method="POST" action="process.php">
+	
+	<input type="text" id="firstName" name="firstName" placeholder="First Name" class="required" />
+	
+	<input type="text" id="lastName" name="lastName" placeholder="Last Name" class="required" />
+	
+	<input type="text" id="email" name="email" placeholder="Email" class="required email" />
+	
+	<textarea id="message" name="message" cols="40" rows="5" placeholder="Message" class="required" minlength="10" ></textarea>
+	
+	<input id="num1" name="num1" readonly="readonly" class="sum" value="<?php echo rand(1,4) ?>" /> + 
+	<input id="num2" name="num2" readonly="readonly" class="sum" value="<?php echo rand(5,9) ?>" /> =
+	<input type="text" name="captcha" id="captcha" class="captcha" maxlength="2" />
+	<span id="spambot">(Are you human, or spambot?)</span>
+	
+	<input id="submit" name="submit" type="submit" value="Send It" />
+	
+	</form>
+	
+	<div id="response"></div>
+	<div id="loading"><img src="images/preloader.png" /></div>
+	</div>
+	
+</body>
+</html>	

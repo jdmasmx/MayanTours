@@ -6,11 +6,11 @@
  *      Purpose: Server-side form validation for Simple Math Captcha
  */
 
-require_once('classes/Validation.class.php');
+//require_once('classes/Validation.class.php');
 
 sleep(2);
-define('TO', 'reservations@cozumelmayantours.com');
-//define('TO', 'judijemaui@gmail.com');
+//define('TO', 'reservations@cozumelmayantours.com');
+define('TO', 'judijemaui@gmail.com');
 define('FROM', 'reservations@cozumelmayantours.com');
 define('SUBJECT', 'Reservation Cozumel Mayan Route and Roots');
 
@@ -27,7 +27,7 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit']) ) {
 //if( $_SERVER['REQUEST_METHOD'] == 'GET' ) {
 
         // Do server-side validation
-    $fname = isset($_POST['firstName']) ? $_POST['firstName'] : "";
+    $fname = isset($_POST['']) ? $_POST['firstName'] : "";
     $lname = isset($_POST['lastName']) ? $_POST['lastName'] : "";
     $email = isset($_POST['email']) ? $_POST['email'] : "";
     $phones = isset($_POST['phones']) ? $_POST['phones'] : "";
